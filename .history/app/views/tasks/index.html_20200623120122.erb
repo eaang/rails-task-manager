@@ -1,0 +1,20 @@
+<div class="container justify-content-center">
+<h1>My tasks</h1>
+<ul class="list-unstyled">
+  <% @tasks.each do |task| %>
+    <% if task.completed %>
+      <li>✔️ <%= link_to task.title, task %> <%= link_to "🗑️",
+            task_path(task),
+            method: :delete,
+            data: { confirm: "Delete #{task.title}?" } %></li>
+    <% else %>
+      <li>❌ <%= link_to task.title, task %> <%= link_to "🗑️",
+            task_path(task),
+            method: :delete,
+            data: { confirm: "Delete #{task.title}?" } %></li>
+    <% end %>
+  <% end %>
+</ul>
+<hr>
+<%= link_to '➕ Add a new task', new_task_path %>
+</div>

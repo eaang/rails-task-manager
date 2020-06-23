@@ -7,13 +7,12 @@
             task_path(task),
             method: :delete,
             data: { confirm: "Delete #{task.title}?" },
-            :class => "text-decoration-none" %></li>
+            :class => "btn btn-outline-dark" %></li>
     <% else %>
       <li>❌ <%= link_to task.title, task %> • <%= link_to "🗑️",
             task_path(task),
             method: :delete,
-            data: { confirm: "Delete #{task.title}?" },
-            :class => "text-decoration-none" %></li>
+            data: { confirm: "Delete #{task.title}?" } %></li>
     <% end %>
   <% end %>
 </ul>
