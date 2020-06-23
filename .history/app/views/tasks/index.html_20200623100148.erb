@@ -1,0 +1,10 @@
+<h1>My tasks</h1>
+<ul class="list-unstyled">
+  <% @tasks.each do |task| %>
+    <% if task.completed %>
+      <li>☑ <%= task.title %></li>
+    <% else %>
+      <li>☐ <%= task.title %></li>
+    <% end %>
+  <% end %>
+</ul>

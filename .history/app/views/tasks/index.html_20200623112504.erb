@@ -1,0 +1,12 @@
+<h1>My tasks</h1>
+<ul class="list-unstyled">
+  <% @tasks.each do |task| %>
+    <% if task.completed %>
+      <li>☑ <%= link_to task.title, task %> • <%= link_to '🗑', delete_path %></li>
+    <% else %>
+      <li>☐ <%= link_to task.title, task %> • <%= link_to '🗑', delete_path %></li>
+    <% end %>
+  <% end %>
+</ul>
+<hr>
+<%= link_to '➕ Add a new task', new_path %>
