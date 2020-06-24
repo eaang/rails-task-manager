@@ -1,3 +1,3 @@
 class Task < ApplicationRecord
-  has_rich_text :details
+  has_rich_text :content
 end
